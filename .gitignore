@@ -4,6 +4,9 @@
 *_files/
 /.quarto/
 
+# Test site output
+test/_site/
+
 # Exclude example.env
 !example.env
 

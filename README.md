@@ -22,6 +22,50 @@ quarto install extension Stadt-Geschichte-Basel/sgb-theme --no-prompt
 
 This will add the necessary files and update your `_quarto.yml` to use the theme.
 
+## Development & Testing
+
+This repository includes a comprehensive test suite to validate the theme functionality:
+
+### Running Tests
+
+```bash
+# Install dependencies
+pnpm install
+
+# Run tests (builds test site and validates output)
+npm test
+
+# Preview test site
+npm run preview
+
+# Build test site only
+npm run build
+```
+
+### Test Structure
+
+- `test/` - Test Quarto project demonstrating theme features
+- `tests/` - Test scripts that validate generated HTML output
+- `playwright.config.js` - Configuration for browser-based testing (optional)
+
+The test suite validates:
+- Basic HTML structure and navigation
+- Theme-specific features (fonts, analytics, styling)
+- Multi-page functionality
+- Code highlighting and table of contents generation
+
+### Extension Structure
+
+```
+_extensions/
+└── sgb-theme/
+    ├── _extension.yml      # Extension metadata and configuration
+    ├── _brand.yml          # Brand-specific styling
+    ├── styles.css          # Custom CSS
+    ├── favicon.png         # Site favicon
+    └── assets/             # Additional theme assets
+```
+
 ## Support
 
 This project is maintained by [@Stadt-Geschichte-Basel](https://github.com/Stadt-Geschichte-Basel). Please understand that we can't provide individual support via email. We also believe that help is much more valuable when it's shared publicly, so more people can benefit from it.

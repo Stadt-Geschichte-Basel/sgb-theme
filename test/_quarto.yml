@@ -1,0 +1,16 @@
+project:
+  type: website
+  title: "SGB Theme Test"
+
+website:
+  title: "SGB Theme Test"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: about.qmd
+        text: About
+
+format:
+  html:
+    theme: sgb-theme
