@@ -1,8 +1,8 @@
 # Quarto
+*.html
+*.pdf
+*_files/
 /.quarto/
-.quarto/
-**/*.quarto_ipynb
-_site/
 
 # Exclude example.env
 !example.env
