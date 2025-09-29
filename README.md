@@ -17,7 +17,7 @@ This Quarto theme provides the official branding and styling for projects of Sta
 To use this theme in your Quarto project, you can add it from the GitHub repository:
 
 ```bash
-quarto use extension Stadt-Geschichte-Basel/sgb-theme --no-prompt
+quarto install extension Stadt-Geschichte-Basel/sgb-theme --no-prompt
 ```
 
 This will add the necessary files and update your `_quarto.yml` to use the theme.
