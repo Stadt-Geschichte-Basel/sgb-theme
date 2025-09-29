@@ -1,0 +1,25 @@
+# _extension.yml
+# Main configuration for the Quarto extension
+
+metadata-files:
+  - _brand.yml
+
+# Default format configurations
+formats:
+  html:
+    # Theme and appearance
+    theme: cosmo
+    mainfont: 'Euclid Circular B'
+    css: styles.css
+
+    # Features
+    toc: true
+    link-external-newwindow: true
+    code-copy: true
+    code-overflow: wrap
+    title-block-categories: false
+
+    # Analytics - remember to replace the domain
+    include-in-header:
+      text: |
+        <script defer data-domain="stadtgeschichtebasel.ch" src="https://plausible.io/js/script.outbound-links.js"></script>

@@ -1,0 +1,24 @@
+/* Add custom styles here, for example from the source repository */
+
+/* Example from stadt-geschichte-basel.github.io */
+@font-face {
+	font-family: 'Euclid Circular B';
+	src:
+		url('assets/fonts/EuclidCircularB-Regular-WebS.woff2') format('woff2'),
+		url('assets/fonts/EuclidCircularB-Regular-WebS.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Euclid Circular B';
+	src:
+		url('assets/fonts/EuclidCircularB-Bold-WebS.woff2') format('woff2'),
+		url('assets/fonts/EuclidCircularB-Bold-WebS.woff') format('woff');
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
+
+/* other styles... */
