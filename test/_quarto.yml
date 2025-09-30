@@ -1,9 +1,9 @@
 project:
   type: website
-  title: "SGB Theme Test"
+  title: 'SGB Theme Test'
 
 website:
-  title: "SGB Theme Test"
+  title: 'SGB Theme Test'
   favicon: favicon.png
   navbar:
     left:

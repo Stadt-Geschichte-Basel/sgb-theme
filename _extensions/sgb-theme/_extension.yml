@@ -11,9 +11,9 @@ contributes:
   formats:
     html:
       # Theme and appearance
-      theme: cosmo
-      mainfont: 'Euclid Circular B'
-      css: styles.css
+      theme:
+        - cosmo
+        - _theme.scss
 
       # Features
       toc: true

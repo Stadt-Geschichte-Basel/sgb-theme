@@ -25,4 +25,45 @@
 	font-display: swap;
 }
 
-/* other styles... */
+/* css styles */
+
+/* Additional styles that complement _brand.yml */
+
+.bi-envelope,
+.anchorjs-link {
+	color: #3a1e3e;
+}
+
+.quarto-category {
+	color: #181818;
+}
+
+.sidebar-navigation {
+	overflow: scroll;
+	scrollbar-color: #ffe880 white;
+	scrollbar-width: thin;
+}
+
+.col-centered {
+	float: none;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+.card {
+	border-radius: 0.2em;
+}
+
+#listing-showcase-reel {
+	padding-bottom: 0;
+}
+
+/* Navbar toggler icon styling */
+[data-bs-theme='dark'] .navbar-toggler-icon {
+	--bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23ffffff' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+[data-bs-theme='dark'] .navbar-toggler-icon:hover,
+.navbar-toggler-icon:focus {
+	--bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23ffe880' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}

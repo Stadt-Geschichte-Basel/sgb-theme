@@ -49,6 +49,7 @@ npm run build
 - `playwright.config.js` - Configuration for browser-based testing (optional)
 
 The test suite validates:
+
 - Basic HTML structure and navigation
 - Theme-specific features (fonts, analytics, styling)
 - Multi-page functionality
