@@ -6,7 +6,7 @@ This Quarto theme provides the official branding and styling for projects of Sta
 [![GitHub forks](https://img.shields.io/github/forks/Stadt-Geschichte-Basel/sgb-theme.svg)](https://github.com/Stadt-Geschichte-Basel/sgb-theme/network)
 [![GitHub stars](https://img.shields.io/github/stars/Stadt-Geschichte-Basel/sgb-theme.svg)](https://github.com/Stadt-Geschichte-Basel/sgb-theme/stargazers)
 [![Code license](https://img.shields.io/github/license/Stadt-Geschichte-Basel/sgb-theme.svg)](https://github.com/Stadt-Geschichte-Basel/sgb-theme/blob/main/LICENSE-AGPL.md)
-[![Data license](https://img.shields.io/github/license/Stadt-Geschichte-Basel/sgb-theme.svg)](https://github.com/Stadt-Geschichte-Basel/sgb-theme/blob/main/LICENSE-CCBY.md)
+[![Data license]([![Data license](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://github.com/Stadt-Geschichte-Basel/sgb-theme/blob/main/LICENSE-CCBY.md))](https://github.com/Stadt-Geschichte-Basel/sgb-theme/blob/main/LICENSE-CCBY.md)
 
 <!-- [![DOI](https://zenodo.org/badge/1066687287.svg)](https://zenodo.org/badge/latestdoi/ZENODO_RECORD) -->
 
@@ -17,10 +17,17 @@ This Quarto theme provides the official branding and styling for projects of Sta
 To use this theme in your Quarto project, you can add it from the GitHub repository:
 
 ```bash
-quarto install extension Stadt-Geschichte-Basel/sgb-theme --no-prompt
+quarto add Stadt-Geschichte-Basel/sgb-theme --no-prompt
 ```
 
-This will add the necessary files and update your `_quarto.yml` to use the theme.
+This command will download the extension files to your project's `_extensions/` directory.  
+To activate the theme, manually add the following to your `_quarto.yml` (under `format -> html -> theme`):
+
+```yaml
+format:
+  html:
+    theme: sgb-theme
+```
 
 ## Development & Testing
 
