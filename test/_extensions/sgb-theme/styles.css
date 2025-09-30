@@ -19,8 +19,8 @@
 
 @font-face {
 	font-family: 'Euclid Circular B';
-	src: url('assets/fonts/EuclidCircularB-Bold-WebS.woff2') format('woff2');
-	font-weight: bold;
+	src: url('assets/fonts/EuclidCircularB-Semibold-WebS.woff2') format('woff2');
+	font-weight: 600;
 	font-style: normal;
 	font-display: swap;
 }

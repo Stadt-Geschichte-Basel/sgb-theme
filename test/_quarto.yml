@@ -4,6 +4,7 @@ project:
 
 website:
   title: "SGB Theme Test"
+  favicon: favicon.png
   navbar:
     left:
       - href: index.qmd
@@ -11,6 +12,4 @@ website:
       - href: about.qmd
         text: About
 
-format:
-  html:
-    theme: sgb-theme
+format: sgb-theme-html
