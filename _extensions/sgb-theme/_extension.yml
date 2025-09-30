@@ -11,6 +11,7 @@ contributes:
       # Branding
       favicon: favicon.png
       logo: assets/img/logo.svg
+      mainfont: Euclid Circular B
 
       # SEO and Social Cards
       open-graph: true
