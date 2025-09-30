@@ -3,9 +3,29 @@ author: Stadt.Geschichte.Basel
 version: 1.0.0
 quarto-required: '>=1.6.0'
 contributes:
-  metadata:
-    project:
-      brand: _brand.yml
+  project:
+    metadata:
+      type: website
+  website:
+    metadata:
+      # Branding
+      favicon: favicon.png
+      logo: assets/img/logo.svg
+
+      # SEO and Social Cards
+      open-graph: true
+      twitter-card: true
+
+      # Navigation and UI
+      page-navigation: true
+      bread-crumbs: true
+      back-to-top-navigation: true
+      repo-actions: [edit, issue]
+
+      # Search configuration
+      search:
+        show-item-context: true
+        type: overlay
 
   # Default format configurations
   formats:

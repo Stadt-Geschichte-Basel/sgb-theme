@@ -10,7 +10,7 @@
 		"format": "prettier --ignore-path .gitignore --write . '!{CODE_OF_CONDUCT.md,LICENSE-AGPL.md,LICENSE-CCBY.md,_layouts/default.html,package-lock.json,pnpm-lock.yaml,yarn.lock}'",
 		"prepare": "husky",
 		"changelog": "npm exec git-cliff -- --config cliff.toml",
-		"build": "cd test && quarto render",
+		"build": "cp -R ./_extensions/ ./test/_extensions/ && cd test && quarto render && rm -rf ./_extensions/",
 		"test": "npm run build && node tests/theme-test.js",
 		"test:static": "npm run build && node tests/theme-test.js",
 		"test:playwright": "npm run build && playwright test --project=static-tests",
