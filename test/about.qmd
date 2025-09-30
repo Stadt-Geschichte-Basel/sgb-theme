@@ -1,0 +1,30 @@
+---
+title: "About"
+---
+
+# About This Test
+
+This is a second page to test navigation and multi-page functionality with the SGB theme.
+
+## Theme Features
+
+The SGB theme should provide:
+
+- **Cosmo theme base** with custom styling
+- **Custom font**: Euclid Circular B
+- **Code features**: Copy buttons and overflow wrapping
+- **External links**: Open in new window
+- **Analytics**: Plausible tracking
+- **Responsive design**
+
+## Testing Checklist
+
+When testing with Playwright, we should verify:
+
+1. ✅ Page loads correctly
+2. ✅ Custom font is applied
+3. ✅ Navigation works
+4. ✅ Code copy buttons appear
+5. ✅ External links have correct attributes
+6. ✅ Table of contents appears
+7. ✅ Analytics script is loaded

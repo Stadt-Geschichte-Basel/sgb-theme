@@ -1,0 +1,49 @@
+title: sgb-theme
+author: Stadt.Geschichte.Basel
+version: 1.0.0
+quarto-required: '>=1.6.0'
+contributes:
+  project:
+    metadata:
+      type: website
+  website:
+    metadata:
+      # Branding
+      favicon: favicon.png
+      logo: assets/img/logo.svg
+      mainfont: Euclid Circular B
+
+      # SEO and Social Cards
+      open-graph: true
+      twitter-card: true
+
+      # Navigation and UI
+      page-navigation: true
+      bread-crumbs: true
+      back-to-top-navigation: true
+      repo-actions: [edit, issue]
+
+      # Search configuration
+      search:
+        show-item-context: true
+        type: overlay
+
+  # Default format configurations
+  formats:
+    html:
+      # Theme and appearance
+      theme:
+        - cosmo
+        - _theme.scss
+
+      # Features
+      toc: true
+      link-external-newwindow: true
+      code-copy: true
+      code-overflow: wrap
+      title-block-categories: false
+
+      # Analytics - remember to replace the domain
+      include-in-header:
+        text: |
+          <script defer data-domain="stadtgeschichtebasel.ch" src="https://plausible.io/js/script.outbound-links.js"></script>

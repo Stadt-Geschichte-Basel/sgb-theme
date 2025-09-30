@@ -1,8 +1,8 @@
 contact_links:
-  - name: Are you looking for documentation on REPO_NAME?
-    url: https://USERNAME.github.io/REPO_NAME
-    about: Please see the documentation for REPO_NAME on its GitHub Pages page.
-  - name: Do you want to discuss REPO_NAME with the community?
-    url: https://github.com/USERNAME/REPO_NAME/discussions
-    about: Please see the discussions page for REPO_NAME.
+  - name: Are you looking for documentation on sgb-theme?
+    url: https://Stadt-Geschichte-Basel.github.io/sgb-theme
+    about: Please see the documentation for sgb-theme on its GitHub Pages page.
+  - name: Do you want to discuss sgb-theme with the community?
+    url: https://github.com/Stadt-Geschichte-Basel/sgb-theme/discussions
+    about: Please see the discussions page for sgb-theme.
 blank_issues_enabled: true

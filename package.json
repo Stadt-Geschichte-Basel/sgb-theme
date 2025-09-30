@@ -1,22 +1,32 @@
 {
-	"name": "REPO_NAME",
-	"description": "SHORT_DESCRIPTION",
-	"author": "FULLNAME <[INSERT CONTACT METHOD]>",
-	"url": "https://github.com/USERNAME/REPO_NAME/issues",
+	"name": "sgb-theme",
+	"description": "Quarto Theme for Stadt.Geschichte.Basel.",
+	"author": "Stadt.Geschichte.Basel <info@stadtgeschichtebasel.ch>",
+	"url": "https://github.com/Stadt-Geschichte-Basel/sgb-theme/issues",
 	"license": "AGPL-3.0",
 	"scripts": {
 		"check": "prettier --ignore-path .gitignore  --check . '!{CODE_OF_CONDUCT.md,LICENSE-AGPL.md,LICENSE-CCBY.md,_layouts/default.html,package-lock.json,pnpm-lock.yaml,yarn.lock}'",
 		"commit": "cz",
 		"format": "prettier --ignore-path .gitignore --write . '!{CODE_OF_CONDUCT.md,LICENSE-AGPL.md,LICENSE-CCBY.md,_layouts/default.html,package-lock.json,pnpm-lock.yaml,yarn.lock}'",
 		"prepare": "husky",
-		"changelog": "npm exec git-cliff -- --config cliff.toml"
+		"changelog": "npm exec git-cliff -- --config cliff.toml",
+		"build": "cp -R ./_extensions/ ./test/_extensions/ && cd test && quarto render && rm -rf ./_extensions/",
+		"test": "npm run build && node tests/theme-test.js",
+		"test:static": "npm run build && node tests/theme-test.js",
+		"test:playwright": "npm run build && playwright test --project=static-tests",
+		"test:headed": "playwright test --headed",
+		"test:debug": "playwright test --debug",
+		"test:report": "playwright show-report",
+		"preview": "cd test && quarto preview"
 	},
 	"devDependencies": {
+		"@playwright/test": "^1.55.1",
 		"commitizen": "^4.3.1",
 		"cz": "^1.8.2",
 		"cz-conventional-changelog": "^3.3.0",
 		"git-cliff": "^2.10.1",
 		"husky": "^9.1.7",
+		"playwright-chromium": "^1.55.1",
 		"prettier": "^3.6.2"
 	},
 	"type": "module",
