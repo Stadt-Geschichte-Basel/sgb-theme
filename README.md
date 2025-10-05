@@ -40,13 +40,13 @@ This repository includes a comprehensive test suite to validate the theme functi
 pnpm install
 
 # Run tests (builds test site and validates output)
-npm test
+pnpm test
 
 # Preview test site
-npm run preview
+pnpm run preview
 
 # Build test site only
-npm run build
+pnpm run build
 ```
 
 ### Test Structure

@@ -17,10 +17,15 @@ contributes:
       twitter-card: true
 
       # Navigation and UI
+      repo-actions: [edit, issue]
       page-navigation: true
       bread-crumbs: true
       back-to-top-navigation: true
-      repo-actions: [edit, issue]
+
+      navbar:
+        logo: assets/img/logo.svg
+        logo-alt: ''
+        tool-collapse: true
 
       # Search configuration
       search:
@@ -36,7 +41,6 @@ contributes:
         - _theme.scss
       css: styles.css
       mainfont: Euclid Circular B
-
       # Features
       toc: true
       link-external-newwindow: true
