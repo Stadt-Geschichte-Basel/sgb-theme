@@ -40,13 +40,13 @@ contributes:
         - cosmo
         - _theme.scss
       css: styles.css
+      mainfont: Euclid Circular B
       # Features
       toc: true
       link-external-newwindow: true
       code-copy: true
       code-overflow: wrap
       title-block-categories: false
-      mainfont: Euclid Circular B
 
       # Analytics - remember to replace the domain
       include-in-header:

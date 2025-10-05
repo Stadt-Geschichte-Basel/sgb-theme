@@ -68,10 +68,32 @@ The test suite validates:
 _extensions/
 └── sgb-theme/
     ├── _extension.yml      # Extension metadata and configuration
-    ├── _brand.yml          # Brand-specific styling
-    ├── styles.css          # Custom CSS
+    ├── _theme.scss         # SCSS theme variables
+    ├── styles.css          # Custom CSS including @font-face declarations
     ├── favicon.png         # Site favicon
     └── assets/             # Additional theme assets
+        ├── fonts/          # Euclid Circular B web fonts
+        └── img/            # Logo and images
+```
+
+### Font Configuration
+
+The theme uses **Euclid Circular B** as the main font. The font configuration consists of two parts:
+
+1. **@font-face declarations** in `styles.css` that load the font files from `assets/fonts/`
+2. **mainfont setting** in `_extension.yml` under `formats: html:` that applies the font to the document
+
+The theme includes three font weights:
+- Regular (400)
+- Medium (500)
+- Semibold (600)
+
+If you need to override the font in your project, you can do so in your `_quarto.yml`:
+
+```yaml
+format:
+  html:
+    mainfont: "Your Custom Font"
 ```
 
 ## Support
