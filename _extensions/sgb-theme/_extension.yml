@@ -11,17 +11,21 @@ contributes:
       # Branding
       favicon: favicon.png
       logo: assets/img/logo.svg
-      mainfont: Euclid Circular B
 
       # SEO and Social Cards
       open-graph: true
       twitter-card: true
 
       # Navigation and UI
+      repo-actions: [edit, issue]
       page-navigation: true
       bread-crumbs: true
       back-to-top-navigation: true
-      repo-actions: [edit, issue]
+
+      navbar:
+        logo: assets/img/logo.svg
+        logo-alt: ''
+        tool-collapse: true
 
       # Search configuration
       search:
@@ -35,13 +39,14 @@ contributes:
       theme:
         - cosmo
         - _theme.scss
-
+      css: styles.css
       # Features
       toc: true
       link-external-newwindow: true
       code-copy: true
       code-overflow: wrap
       title-block-categories: false
+      mainfont: Euclid Circular B
 
       # Analytics - remember to replace the domain
       include-in-header:
