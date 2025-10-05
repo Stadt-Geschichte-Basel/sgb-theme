@@ -11,7 +11,6 @@ contributes:
       # Branding
       favicon: favicon.png
       logo: assets/img/logo.svg
-      mainfont: Euclid Circular B
 
       # SEO and Social Cards
       open-graph: true
@@ -35,6 +34,8 @@ contributes:
       theme:
         - cosmo
         - _theme.scss
+      css: styles.css
+      mainfont: Euclid Circular B
 
       # Features
       toc: true
