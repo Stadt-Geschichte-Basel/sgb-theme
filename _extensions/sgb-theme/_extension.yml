@@ -48,6 +48,8 @@ contributes:
       code-overflow: wrap
       title-block-categories: false
 
+      canonical-url: true
+
       # Analytics - To customize for your site:
       # 1. Override this in your _quarto.yml by setting:
       #    format:
