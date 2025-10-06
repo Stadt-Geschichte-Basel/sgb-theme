@@ -1,5 +1,6 @@
 ---
-title: "About"
+title: "Stadt.Geschichte.Basel RDM"
+subtitle: "Forschungsdatenmanagement und Public History"
 ---
 
 # About This Test

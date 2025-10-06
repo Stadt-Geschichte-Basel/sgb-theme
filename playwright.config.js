@@ -1,4 +1,4 @@
-import { defineConfig } from '@playwright/test';
+import { defineConfig, devices } from '@playwright/test';
 
 /**
  * @see https://playwright.dev/docs/test-configuration
@@ -16,14 +16,19 @@ export default defineConfig({
 	/* Reporter to use. See https://playwright.dev/docs/test-reporters */
 	reporter: [['list'], ['html']],
 
-	/* Configure projects for different test types */
+	/* Shared settings for all projects */
+	use: {
+		/* Collect trace when retrying the failed test. */
+		trace: 'on-first-retry',
+		/* Screenshot on failure */
+		screenshot: 'only-on-failure'
+	},
+
+	/* Configure projects for different browsers */
 	projects: [
 		{
-			name: 'static-tests',
-			testMatch: '**/static.spec.js',
-			use: {
-				// No browser needed for static file tests
-			}
+			name: 'chromium',
+			use: { ...devices['Desktop Chrome'] }
 		}
 	]
 });

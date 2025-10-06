@@ -48,7 +48,14 @@ contributes:
       code-overflow: wrap
       title-block-categories: false
 
-      # Analytics - remember to replace the domain
+      # Analytics - To customize for your site:
+      # 1. Override this in your _quarto.yml by setting:
+      #    format:
+      #      sgb-theme-html:
+      #        include-in-header:
+      #          text: |
+      #            <script defer data-domain="your-domain.com" src="https://plausible.io/js/script.outbound-links.js"></script>
+      # 2. Or remove analytics by setting include-in-header: null
       include-in-header:
         text: |
           <script defer data-domain="stadtgeschichtebasel.ch" src="https://plausible.io/js/script.outbound-links.js"></script>

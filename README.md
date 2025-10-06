@@ -34,7 +34,7 @@ format:
 The theme requires the following assets in your project root directory:
 
 1. **Logo**: `assets/img/logo.svg` - The Stadt.Geschichte.Basel logo for the navbar
-2. **Fonts**: 
+2. **Fonts**:
    - `assets/fonts/EuclidCircularB-Regular-WebS.woff2`
    - `assets/fonts/EuclidCircularB-Medium-WebS.woff2`
    - `assets/fonts/EuclidCircularB-Semibold-WebS.woff2`
@@ -106,6 +106,7 @@ The theme uses **Euclid Circular B** as the main font. The font configuration co
 2. **mainfont setting** in `_extension.yml` under `formats: html:` that applies the font to the document
 
 The theme includes three font weights:
+
 - Regular (400)
 - Medium (500)
 - Semibold (600)
@@ -115,7 +116,39 @@ If you need to override the font in your project, you can do so in your `_quarto
 ```yaml
 format:
   html:
-    mainfont: "Your Custom Font"
+    mainfont: 'Your Custom Font'
+```
+
+### Analytics Configuration
+
+The theme includes [Plausible Analytics](https://plausible.io/) configured for the Stadt.Geschichte.Basel domain by default. You can customize or disable this in your project's `_quarto.yml`:
+
+#### Option 1: Use your own Plausible domain
+
+```yaml
+format:
+  sgb-theme-html:
+    include-in-header:
+      text: |
+        <script defer data-domain="your-domain.com" src="https://plausible.io/js/script.outbound-links.js"></script>
+```
+
+#### Option 2: Disable analytics completely
+
+```yaml
+format:
+  sgb-theme-html:
+    include-in-header: null
+```
+
+#### Option 3: Use a different analytics service
+
+```yaml
+format:
+  sgb-theme-html:
+    include-in-header:
+      text: |
+        <!-- Your custom analytics script here -->
 ```
 
 ## Support

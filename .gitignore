@@ -6,6 +6,8 @@
 
 # Test site output
 test/_site/
+test-results/
+playwright-report/
 
 # Exclude example.env
 !example.env
