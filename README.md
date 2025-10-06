@@ -29,6 +29,28 @@ format:
     theme: sgb-theme
 ```
 
+### Required Assets
+
+The theme requires the following assets in your project root directory:
+
+1. **Logo**: `assets/img/logo.svg` - The Stadt.Geschichte.Basel logo for the navbar
+2. **Fonts**: 
+   - `assets/fonts/EuclidCircularB-Regular-WebS.woff2`
+   - `assets/fonts/EuclidCircularB-Medium-WebS.woff2`
+   - `assets/fonts/EuclidCircularB-Semibold-WebS.woff2`
+
+You can copy these assets from the `_extensions/sgb-theme/assets/` directory after installing the theme:
+
+```bash
+# Copy logo
+mkdir -p assets/img
+cp _extensions/sgb-theme/assets/img/logo.svg assets/img/
+
+# Copy fonts
+mkdir -p assets/fonts
+cp _extensions/sgb-theme/assets/fonts/*.woff2 assets/fonts/
+```
+
 ## Development & Testing
 
 This repository includes a comprehensive test suite to validate the theme functionality:
