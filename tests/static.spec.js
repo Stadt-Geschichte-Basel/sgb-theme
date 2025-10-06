@@ -51,11 +51,13 @@ test.describe('SGB Theme Browser Tests', () => {
 		}
 
 		// Test TOC presence
-		const toc = page.locator('#TOC, nav#TOC, .toc-active, nav[role="doc-toc"]').first();
-		const tocCount = await page.locator('#TOC, nav#TOC, .toc-active, nav[role="doc-toc"]').count();
+		const toc = page.locator('nav[role="doc-toc"]');
+		const tocCount = await toc.count();
 		if (tocCount > 0) {
 			await expect(toc).toBeAttached();
-		} // Test code blocks rendering
+		}
+
+		// Test code blocks rendering
 		const codeBlock = page.locator('pre');
 		await expect(codeBlock).toBeVisible();
 		const codeElement = page.locator('code');
