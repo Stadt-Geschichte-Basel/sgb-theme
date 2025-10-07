@@ -5,8 +5,9 @@ This Quarto theme provides the official branding and styling for projects of Sta
 [![GitHub issues](https://img.shields.io/github/issues/Stadt-Geschichte-Basel/sgb-theme.svg)](https://github.com/Stadt-Geschichte-Basel/sgb-theme/issues)
 [![GitHub forks](https://img.shields.io/github/forks/Stadt-Geschichte-Basel/sgb-theme.svg)](https://github.com/Stadt-Geschichte-Basel/sgb-theme/network)
 [![GitHub stars](https://img.shields.io/github/stars/Stadt-Geschichte-Basel/sgb-theme.svg)](https://github.com/Stadt-Geschichte-Basel/sgb-theme/stargazers)
-[![Code license](https://img.shields.io/github/license/Stadt-Geschichte-Basel/sgb-theme.svg)](https://github.com/Stadt-Geschichte-Basel/sgb-theme/blob/main/LICENSE-AGPL.md)
-[![Data license]([![Data license](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://github.com/Stadt-Geschichte-Basel/sgb-theme/blob/main/LICENSE-CCBY.md))](https://github.com/Stadt-Geschichte-Basel/sgb-theme/blob/main/LICENSE-CCBY.md)
+[![Code license](https://img.shields.io/badge/Code_License-AGPL--3.0-orange.svg)](https://github.com/Stadt-Geschichte-Basel/sgb-theme/blob/main/LICENSE-AGPL.md)
+[![Data license](https://img.shields.io/badge/Data%2FContent_License-CC%20BY%204.0-lightgrey.svg)](https://github.com/Stadt-Geschichte-Basel/sgb-theme/blob/main/LICENSE-CCBY.md)
+[![Live Usecase](https://img.shields.io/badge/Live_Usecase-Stadt.Geschichte.Basel-3a1e3e)](https://dokumentation.stadtgeschichtebasel.ch)
 
 <!-- [![DOI](https://zenodo.org/badge/1066687287.svg)](https://zenodo.org/badge/latestdoi/ZENODO_RECORD) -->
 
