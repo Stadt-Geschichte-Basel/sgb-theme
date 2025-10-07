@@ -1,18 +1,9 @@
 import { test, expect } from '@playwright/test';
-import { fileURLToPath } from 'url';
-import { dirname, join } from 'path';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-// Get the base URL for the static site
-const siteDir = join(__dirname, '..', 'test', '_site');
-const baseUrl = `file://${siteDir}`;
 
 test.describe('SGB Theme Browser Tests', () => {
 	test('should generate correct HTML structure and render properly', async ({ page }) => {
 		// Navigate to the actual page in a browser
-		await page.goto(`${baseUrl}/index.html`);
+		await page.goto('/index.html');
 
 		// Test basic structure
 		await expect(page).toHaveTitle(/Testing SGB Theme/);
@@ -41,13 +32,8 @@ test.describe('SGB Theme Browser Tests', () => {
 		const externalLinks = page.locator('a[href^="http"]');
 		if ((await externalLinks.count()) > 0) {
 			const firstExternal = externalLinks.first();
-			const target = await firstExternal.getAttribute('target');
 			// Target blank should be set by Quarto's link-external-newwindow feature
-			if (target) {
-				expect(target).toBe('_blank');
-			} else {
-				console.log('External link target not set - may need JavaScript to run');
-			}
+			await expect(firstExternal).toHaveAttribute('target', '_blank');
 		}
 
 		// Test TOC presence
@@ -66,7 +52,7 @@ test.describe('SGB Theme Browser Tests', () => {
 
 	test('should include and load required CSS and JS assets', async ({ page }) => {
 		// Navigate to the page
-		await page.goto(`${baseUrl}/index.html`);
+		await page.goto('/index.html');
 
 		// Check for CSS by verifying styles are applied
 		const body = page.locator('body');
@@ -88,7 +74,7 @@ test.describe('SGB Theme Browser Tests', () => {
 	});
 
 	test('should have proper meta tags and document structure', async ({ page }) => {
-		await page.goto(`${baseUrl}/index.html`);
+		await page.goto('/index.html');
 
 		// Check document structure through DOM
 		const html = page.locator('html');
@@ -113,7 +99,7 @@ test.describe('SGB Theme Browser Tests', () => {
 	});
 
 	test('should have about page with navigation and proper rendering', async ({ page }) => {
-		await page.goto(`${baseUrl}/about.html`);
+		await page.goto('/about.html');
 
 		// Test about page content
 		await expect(page).toHaveTitle(/Basel RDM|About/);
@@ -136,7 +122,7 @@ test.describe('SGB Theme Browser Tests', () => {
 		}
 
 		// Navigate back to about to verify it works both ways
-		await page.goto(`${baseUrl}/index.html`);
+		await page.goto('/index.html');
 		const aboutLink = page.locator('a[href*="about"]').first();
 		await expect(aboutLink).toBeVisible();
 		await aboutLink.click();
@@ -145,7 +131,7 @@ test.describe('SGB Theme Browser Tests', () => {
 	});
 
 	test('should apply custom typography and fonts', async ({ page }) => {
-		await page.goto(`${baseUrl}/index.html`);
+		await page.goto('/index.html');
 
 		// Check for custom font in computed styles
 		const bodyFontFamily = await page.locator('body').evaluate((el) => {
@@ -164,25 +150,5 @@ test.describe('SGB Theme Browser Tests', () => {
 			});
 		expect(h1FontSize).toBeTruthy();
 		expect(h1FontSize).not.toBe('16px'); // Should be larger than default
-	});
-
-	test('should handle external links with target blank', async ({ page }) => {
-		await page.goto(`${baseUrl}/index.html`);
-
-		// Find external links
-		const externalLinks = page.locator('a[target="_blank"]');
-		const count = await externalLinks.count();
-
-		if (count > 0) {
-			// Verify at least one external link has proper attributes
-			const firstExternal = externalLinks.first();
-			await expect(firstExternal).toHaveAttribute('target', '_blank');
-		}
-
-		// Verify external links are visible and clickable
-		const allLinks = page.locator('a[href^="http"]');
-		if ((await allLinks.count()) > 0) {
-			await expect(allLinks.first()).toBeVisible();
-		}
 	});
 });

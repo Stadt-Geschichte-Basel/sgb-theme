@@ -18,10 +18,19 @@ export default defineConfig({
 
 	/* Shared settings for all projects */
 	use: {
+		/* Base URL to use in actions like `await page.goto('/')` */
+		baseURL: 'http://localhost:3000',
 		/* Collect trace when retrying the failed test. */
 		trace: 'on-first-retry',
 		/* Screenshot on failure */
 		screenshot: 'only-on-failure'
+	},
+
+	/* Run local dev server before starting tests */
+	webServer: {
+		command: 'npx http-server test/_site -p 3000 -s',
+		port: 3000,
+		reuseExistingServer: !process.env.CI
 	},
 
 	/* Configure projects for different browsers */
