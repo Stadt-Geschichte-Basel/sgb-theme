@@ -120,6 +120,8 @@ format:
     mainfont: 'Your Custom Font'
 ```
 
+If necessary, Stadt.Geschichte.Basel design guidelines recommend [Crimson Pro](https://fonts.google.com/specimen/Crimson+Pro) as an alternative font with an open license.
+
 ### Analytics Configuration
 
 The theme includes [Plausible Analytics](https://plausible.io/) configured for the Stadt.Geschichte.Basel domain by default. You can customize or disable this in your project's `_quarto.yml`:
