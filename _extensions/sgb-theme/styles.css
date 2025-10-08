@@ -4,7 +4,7 @@
 @font-face {
 	font-display: swap;
 	font-family: 'Euclid Circular B';
-	src: url('/assets/fonts/EuclidCircularB-Regular-WebS.woff2') format('woff2');
+	src: url('assets/fonts/EuclidCircularB-Regular-WebS.woff2') format('woff2');
 	font-style: normal;
 	font-weight: 400;
 }
@@ -12,7 +12,7 @@
 @font-face {
 	font-display: swap;
 	font-family: 'Euclid Circular B';
-	src: url('/assets/fonts/EuclidCircularB-Medium-WebS.woff2') format('woff2');
+	src: url('assets/fonts/EuclidCircularB-Medium-WebS.woff2') format('woff2');
 	font-style: normal;
 	font-weight: 500;
 }
@@ -20,7 +20,7 @@
 @font-face {
 	font-display: swap;
 	font-family: 'Euclid Circular B';
-	src: url('/assets/fonts/EuclidCircularB-Semibold-WebS.woff2') format('woff2');
+	src: url('assets/fonts/EuclidCircularB-Semibold-WebS.woff2') format('woff2');
 	font-style: normal;
 	font-weight: 600;
 }

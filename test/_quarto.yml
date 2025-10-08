@@ -4,7 +4,6 @@ project:
 
 website:
   title: 'SGB Theme Test'
-  favicon: favicon.png
   navbar:
     left:
       - href: index.qmd
