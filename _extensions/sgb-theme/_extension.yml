@@ -61,3 +61,8 @@ contributes:
       include-in-header:
         text: |
           <script defer data-domain="stadtgeschichtebasel.ch" src="https://plausible.io/js/script.outbound-links.js"></script>
+
+      # Resources to copy to output
+      resources:
+        - assets/**
+        - favicon.png
