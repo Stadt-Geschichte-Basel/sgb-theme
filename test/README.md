@@ -51,5 +51,5 @@ The test suite validates:
 ## Notes
 
 - Some theme features may not be applied depending on Quarto version compatibility
-- The extension requires the correct directory structure in `_extensions/sgb-theme/`
+- The extension requires the correct directory structure in `_extensions/Stadt-Geschichte-Basel/sgb-theme/`
 - Tests are designed to be informative about missing features rather than failing completely

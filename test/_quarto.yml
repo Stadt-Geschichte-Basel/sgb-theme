@@ -6,7 +6,7 @@ website:
   site-url: https://dokumentation.stadtgeschichtebasel.ch/sgb-theme/
 
   # Branding
-  favicon: _extensions/sgb-theme/favicon.png
+  favicon: _extensions/Stadt-Geschichte-Basel/sgb-theme/favicon.png
 
   # SEO and Social Cards
   open-graph: true
@@ -19,7 +19,7 @@ website:
   back-to-top-navigation: true
 
   navbar:
-    logo: _extensions/sgb-theme/assets/img/logo.svg
+    logo: _extensions/Stadt-Geschichte-Basel/sgb-theme/assets/img/logo.svg
     logo-alt: ''
     tool-collapse: true
     left:

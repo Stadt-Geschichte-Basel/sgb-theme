@@ -40,9 +40,9 @@ website:
   site-url: https://dokumentation.stadtgeschichtebasel.ch/sgb-theme/
 
   # Branding
-  favicon: _extensions/sgb-theme/favicon.png
+  favicon: _extensions/Stadt-Geschichte-Basel/sgb-theme/favicon.png
   navbar:
-    logo: _extensions/sgb-theme/assets/img/logo.svg
+    logo: _extensions/Stadt-Geschichte-Basel/sgb-theme/assets/img/logo.svg
     logo-alt: 'Stadt.Geschichte.Basel Logo'
     tool-collapse: true
     left:
@@ -74,11 +74,11 @@ format:
 
 The theme includes all required assets which are automatically copied to your site output:
 
-1. **Logo**: `_extensions/sgb-theme/assets/img/logo.svg` - The Stadt.Geschichte.Basel logo for the navbar.
+1. **Logo**: `_extensions/Stadt-Geschichte-Basel/sgb-theme/assets/img/logo.svg` - The Stadt.Geschichte.Basel logo for the navbar.
 2. **Fonts**: Euclid Circular B web fonts (Regular, Medium, Semibold).
-3. **Favicon**: `_extensions/sgb-theme/favicon.png` - Site favicon.
+3. **Favicon**: `_extensions/Stadt-Geschichte-Basel/sgb-theme/favicon.png` - Site favicon.
 
-As shown in the example `_quarto.yml` above, you should reference the `logo` and `favicon` from the `_extensions/sgb-theme/` directory in your project's configuration. These assets are bundled with the extension and will be automatically available in your rendered site. No manual copying is required.
+As shown in the example `_quarto.yml` above, you should reference the `logo` and `favicon` from the `_extensions/Stadt-Geschichte-Basel/sgb-theme/` directory in your project's configuration. These assets are bundled with the extension and will be automatically available in your rendered site. No manual copying is required.
 
 ## Development & Testing
 
