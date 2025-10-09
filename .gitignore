@@ -1,8 +1,13 @@
 # Quarto
+*.html
+*.pdf
+*_files/
 /.quarto/
-.quarto/
-**/*.quarto_ipynb
-_site/
+
+# Test site output
+test/_site/
+test-results/
+playwright-report/
 
 # Exclude example.env
 !example.env

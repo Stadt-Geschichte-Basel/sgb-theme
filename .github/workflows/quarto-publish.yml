@@ -21,12 +21,12 @@ jobs:
 
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Set up Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
-          node-version: '22'
+          node-version: '24'
 
       - name: Install dependencies
         run: npm install
@@ -40,12 +40,7 @@ jobs:
 
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
-
-      - name: Overwrite _quarto.yml
-        if: github.repository == 'maehr/open-research-data-template'
-        run: |
-          cp .github/_quarto.yml _quarto.yml
+        uses: actions/checkout@v5
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
@@ -73,26 +68,30 @@ jobs:
 
       # See more at https://github.com/quarto-dev/quarto-actions/blob/main/examples/example-03-dependencies.md
 
+      - name: Install Quarto extensions
+        run: cd test && quarto add Stadt-Geschichte-Basel/sgb-theme --no-prompt
+
       - name: Render Quarto Project
         uses: quarto-dev/quarto-actions/render@v2
         with:
           to: html
+          path: test
 
       - name: JamPack Optimization
         run: |
-          npx @divriots/jampack ./_site
+          npx @divriots/jampack test/_site
 
       - name: Upload Built Artifacts
         uses: actions/upload-artifact@v4
         with:
           name: built-site
-          path: _site
+          path: test/_site
 
       - name: Upload static files as artifact
         id: deployment
-        uses: actions/upload-pages-artifact@v3 # or specific "vX.X.X" version tag for this action
+        uses: actions/upload-pages-artifact@v4 # or specific "vX.X.X" version tag for this action
         with:
-          path: _site
+          path: test/_site
 
   deadlinkcheck:
     name: Download Artifacts and Check for Dead Links
@@ -101,14 +100,14 @@ jobs:
 
     steps:
       - name: Download Built Artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: built-site
-          path: _site
+          path: test/_site
 
       - name: Start static server
         run: |
-          cd _site
+          cd test/_site
           nohup python3 -m http.server 5528 &
           sleep 3  # Give the server time to start
 
