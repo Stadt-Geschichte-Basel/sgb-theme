@@ -3,6 +3,8 @@ project:
   title: 'SGB Theme Test'
 
 website:
+  site-url: https://dokumentation.stadtgeschichtebasel.ch/sgb-theme/
+
   # Branding
   favicon: _extensions/sgb-theme/favicon.png
 

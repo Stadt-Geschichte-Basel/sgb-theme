@@ -21,24 +21,64 @@ To use this theme in your Quarto project, you can add it from the GitHub reposit
 quarto add Stadt-Geschichte-Basel/sgb-theme --no-prompt
 ```
 
-This command will download the extension files to your project's `_extensions/` directory.  
-To activate the theme, manually add the following to your `_quarto.yml` (under `format -> html -> theme`):
+This command will download the extension files to your project's `_extensions/` directory.
+To activate the theme, add the following to your `_quarto.yml`:
 
 ```yaml
 format:
-  html:
-    theme: sgb-theme
+  sgb-theme-html: default
+```
+
+Below is a comprehensive example of a `_quarto.yml` file that demonstrates how to configure a website project with this theme. This setup includes a navbar with a logo, a favicon, and other recommended options for a Stadt.Geschichte.Basel project.
+
+```yaml
+project:
+  type: website
+  title: 'SGB Project Title'
+
+website:
+  site-url: https://dokumentation.stadtgeschichtebasel.ch/sgb-theme/
+
+  # Branding
+  favicon: _extensions/sgb-theme/favicon.png
+  navbar:
+    logo: _extensions/sgb-theme/assets/img/logo.svg
+    logo-alt: 'Stadt.Geschichte.Basel Logo'
+    tool-collapse: true
+    left:
+      - href: index.qmd
+        text: Home
+      - href: about.qmd
+        text: About
+
+  # SEO and Social Cards
+  open-graph: true
+  twitter-card: true
+
+  # Navigation and UI
+  repo-actions: [edit, issue]
+  page-navigation: true
+  bread-crumbs: true
+  back-to-top-navigation: true
+
+  # Search configuration
+  search:
+    show-item-context: true
+    type: overlay
+
+format:
+  sgb-theme-html: default
 ```
 
 ### Assets
 
 The theme includes all required assets which are automatically copied to your site output:
 
-1. **Logo**: `assets/img/logo.svg` - The Stadt.Geschichte.Basel logo for the navbar
-2. **Fonts**: Euclid Circular B web fonts (Regular, Medium, Semibold)
-3. **Favicon**: `favicon.png` - Site favicon
+1. **Logo**: `_extensions/sgb-theme/assets/img/logo.svg` - The Stadt.Geschichte.Basel logo for the navbar.
+2. **Fonts**: Euclid Circular B web fonts (Regular, Medium, Semibold).
+3. **Favicon**: `_extensions/sgb-theme/favicon.png` - Site favicon.
 
-These assets are bundled with the extension and will be automatically available in your rendered site. No manual copying is required.
+As shown in the example `_quarto.yml` above, you should reference the `logo` and `favicon` from the `_extensions/sgb-theme/` directory in your project's configuration. These assets are bundled with the extension and will be automatically available in your rendered site. No manual copying is required.
 
 ## Development & Testing
 
@@ -100,46 +140,18 @@ The theme includes three font weights:
 - Medium (500)
 - Semibold (600)
 
-If you need to override the font in your project, you can do so in your `_quarto.yml`:
-
-```yaml
-format:
-  html:
-    mainfont: 'Your Custom Font'
-```
-
-If necessary, Stadt.Geschichte.Basel design guidelines recommend [Crimson Pro](https://fonts.google.com/specimen/Crimson+Pro) as an alternative font with an open license.
-
 ### Analytics Configuration
 
 The theme includes [Plausible Analytics](https://plausible.io/) configured for the Stadt.Geschichte.Basel domain by default. You can customize or disable this in your project's `_quarto.yml`:
 
-#### Option 1: Use your own Plausible domain
+#### Use your appropriate Plausible domain
 
 ```yaml
 format:
   sgb-theme-html:
     include-in-header:
       text: |
-        <script defer data-domain="your-domain.com" src="https://plausible.io/js/script.outbound-links.js"></script>
-```
-
-#### Option 2: Disable analytics completely
-
-```yaml
-format:
-  sgb-theme-html:
-    include-in-header: null
-```
-
-#### Option 3: Use a different analytics service
-
-```yaml
-format:
-  sgb-theme-html:
-    include-in-header:
-      text: |
-        <!-- Your custom analytics script here -->
+        <script defer data-domain="dokumentation.stadtgeschichtebasel.ch" src="https://plausible.io/js/script.outbound-links.js"></script>
 ```
 
 ## Support

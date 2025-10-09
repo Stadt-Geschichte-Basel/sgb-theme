@@ -14,11 +14,11 @@ contributes:
       mainfont: Euclid Circular B
       # Features
       toc: true
+      link-external-icon: true
       link-external-newwindow: true
       code-copy: true
       code-overflow: wrap
       title-block-categories: false
-
       canonical-url: true
 
       # Analytics - To customize for your site:

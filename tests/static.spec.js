@@ -29,7 +29,7 @@ test.describe('SGB Theme Browser Tests', () => {
 		expect(content).toContain('data-domain="stadtgeschichtebasel.ch"'); // Analytics
 
 		// External links get target="_blank" added by JavaScript, so check the DOM
-		const externalLinks = page.locator('a[href^="http"]');
+		const externalLinks = page.locator('#quarto-content a[href^="http"]:not([href*="localhost"])');
 		if ((await externalLinks.count()) > 0) {
 			const firstExternal = externalLinks.first();
 			// Target blank should be set by Quarto's link-external-newwindow feature
@@ -102,32 +102,22 @@ test.describe('SGB Theme Browser Tests', () => {
 		await page.goto('/about.html');
 
 		// Test about page content
-		await expect(page).toHaveTitle(/Basel RDM|About/);
-		await expect(page.locator('h1').first()).toContainText('Stadt.Geschichte.Basel RDM');
+		await expect(page).toHaveTitle(/About/);
+		await expect(page.locator('h1.title').first()).toContainText('About');
 
-		// Test navigation back to home
-		const homeLinks = page.locator('a[href*="index.html"]');
-		const visibleHomeLink = homeLinks.filter({ hasText: /Home|SGB/ }).first();
-		const linkCount = await visibleHomeLink.count();
-
-		if (linkCount > 0) {
-			await expect(visibleHomeLink).toBeVisible();
-
-			// Verify navigation works
-			await visibleHomeLink.click();
-			await expect(page).toHaveTitle(/Testing SGB Theme/);
-		} else {
-			// Alternative: just check any home link exists
-			await expect(homeLinks.first()).toBeAttached();
-		}
+		// Test navigation back to home (prefer role-based selection; robust to href variations)
+		const homeLink = page.getByRole('link', { name: /^Home$/ });
+		await expect(homeLink).toBeVisible();
+		await homeLink.click();
+		await expect(page).toHaveTitle(/Testing SGB Theme/);
 
 		// Navigate back to about to verify it works both ways
 		await page.goto('/index.html');
-		const aboutLink = page.locator('a[href*="about"]').first();
+		const aboutLink = page.getByRole('link', { name: /^About$/ });
 		await expect(aboutLink).toBeVisible();
 		await aboutLink.click();
 		await expect(page).toHaveURL(/about\.html$/); // Match end of URL
-		await expect(page).toHaveTitle(/Basel RDM|About/);
+		await expect(page).toHaveTitle(/About/);
 	});
 
 	test('should apply custom typography and fonts', async ({ page }) => {
