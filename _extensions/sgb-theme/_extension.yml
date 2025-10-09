@@ -3,35 +3,6 @@ author: Stadt.Geschichte.Basel
 version: 1.0.0
 quarto-required: '>=1.6.0'
 contributes:
-  project:
-    metadata:
-      type: website
-  website:
-    metadata:
-      # Branding
-      favicon: favicon.png
-      logo: assets/img/logo.svg
-
-      # SEO and Social Cards
-      open-graph: true
-      twitter-card: true
-
-      # Navigation and UI
-      repo-actions: [edit, issue]
-      page-navigation: true
-      bread-crumbs: true
-      back-to-top-navigation: true
-
-      navbar:
-        logo: assets/img/logo.svg
-        logo-alt: ''
-        tool-collapse: true
-
-      # Search configuration
-      search:
-        show-item-context: true
-        type: overlay
-
   # Default format configurations
   formats:
     html:
@@ -62,7 +33,10 @@ contributes:
         text: |
           <script defer data-domain="stadtgeschichtebasel.ch" src="https://plausible.io/js/script.outbound-links.js"></script>
 
-      # Resources to copy to output
+      # Resources
       resources:
-        - assets/**
+        - assets/fonts/EuclidCircularB-Medium-WebS.woff2
+        - assets/fonts/EuclidCircularB-Regular-WebS.woff2
+        - assets/fonts/EuclidCircularB-Semibold-WebS.woff2
+        - assets/img/logo.svg
         - favicon.png

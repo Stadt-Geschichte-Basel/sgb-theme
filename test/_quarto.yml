@@ -3,12 +3,34 @@ project:
   title: 'SGB Theme Test'
 
 website:
-  title: 'SGB Theme Test'
+  # Branding
+  favicon: _extensions/sgb-theme/favicon.png
+
+  # SEO and Social Cards
+  open-graph: true
+  twitter-card: true
+
+  # Navigation and UI
+  repo-actions: [edit, issue]
+  page-navigation: true
+  bread-crumbs: true
+  back-to-top-navigation: true
+
   navbar:
+    logo: _extensions/sgb-theme/assets/img/logo.svg
+    logo-alt: ''
+    tool-collapse: true
     left:
       - href: index.qmd
         text: Home
       - href: about.qmd
         text: About
 
-format: sgb-theme-html
+  # Search configuration
+  search:
+    show-item-context: true
+    type: overlay
+  title: 'SGB Theme Test'
+
+format:
+  sgb-theme-html: default
