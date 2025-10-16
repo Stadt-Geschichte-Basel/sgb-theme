@@ -56,12 +56,12 @@ test.describe('SGB Theme Tests', () => {
 			const hasSvg = await mermaidDiagram.first().locator('svg').count();
 			if (hasSvg > 0) {
 				await expect(mermaidDiagram.first().locator('svg')).toBeVisible();
-				console.log('✅ Mermaid diagram rendered as SVG');
+				console.log('Mermaid diagram rendered as SVG');
 			} else {
-				console.log('⚠️  Mermaid diagram found but not yet rendered as SVG');
+				console.log('Mermaid diagram found but not yet rendered as SVG');
 			}
 		} else {
-			console.log('⚠️  No mermaid diagram found on page');
+			console.log('No mermaid diagram found on page');
 		}
 	});
 

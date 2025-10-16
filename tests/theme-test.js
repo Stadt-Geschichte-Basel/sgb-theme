@@ -85,9 +85,8 @@ function runTests() {
 	assertContains(indexContent, '<code', 'Code elements present');
 
 	// Test Mermaid diagram
-	console.log('\n📊 Testing Mermaid diagrams:');
 	if (indexContent.includes('mermaid')) {
-		console.log('  ✅ Mermaid content found in HTML');
+		console.log('✅ Mermaid content found in HTML');
 
 		// Check for mermaid class or data attribute
 		if (indexContent.includes('class="mermaid"') || indexContent.includes('data-mermaid')) {
@@ -110,7 +109,7 @@ function runTests() {
 			console.log('  ✅ Mermaid diagram syntax found');
 		}
 	} else {
-		console.log('  ⚠️  No Mermaid content found in HTML');
+		console.log('⚠️  No Mermaid content found in HTML');
 	}
 
 	// Test TOC
