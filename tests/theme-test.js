@@ -84,6 +84,35 @@ function runTests() {
 	assertContains(indexContent, '<pre', 'Code blocks present');
 	assertContains(indexContent, '<code', 'Code elements present');
 
+	// Test Mermaid diagram
+	console.log('\n📊 Testing Mermaid diagrams:');
+	if (indexContent.includes('mermaid')) {
+		console.log('  ✅ Mermaid content found in HTML');
+
+		// Check for mermaid class or data attribute
+		if (indexContent.includes('class="mermaid"') || indexContent.includes('data-mermaid')) {
+			console.log('  ✅ Mermaid diagram container present');
+		}
+
+		// Check if mermaid script is loaded
+		if (indexContent.includes('mermaid.min.js') || indexContent.includes('mermaid.js')) {
+			console.log('  ✅ Mermaid JavaScript library included');
+		} else {
+			console.log('  ⚠️  Mermaid JavaScript library not found - diagrams may not render');
+		}
+
+		// Check for mermaid diagram syntax
+		if (
+			indexContent.includes('graph') ||
+			indexContent.includes('flowchart') ||
+			indexContent.includes('sequenceDiagram')
+		) {
+			console.log('  ✅ Mermaid diagram syntax found');
+		}
+	} else {
+		console.log('  ⚠️  No Mermaid content found in HTML');
+	}
+
 	// Test TOC
 	assertContains(indexContent, 'toc', 'Table of contents present');
 

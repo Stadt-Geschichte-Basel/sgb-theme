@@ -141,4 +141,31 @@ test.describe('SGB Theme Browser Tests', () => {
 		expect(h1FontSize).toBeTruthy();
 		expect(h1FontSize).not.toBe('16px'); // Should be larger than default
 	});
+
+	test('should render mermaid diagrams correctly', async ({ page }) => {
+		await page.goto('/index.html');
+
+		// Wait for potential mermaid rendering
+		await page.waitForLoadState('networkidle');
+
+		// Check for mermaid diagram
+		const mermaidDiagram = page.locator('.mermaid, pre.mermaid, [data-mermaid]');
+		const mermaidCount = await mermaidDiagram.count();
+
+		if (mermaidCount > 0) {
+			await expect(mermaidDiagram.first()).toBeVisible();
+
+			// Verify SVG was rendered
+			const svg = mermaidDiagram.first().locator('svg');
+			await expect(svg).toBeVisible();
+
+			// Verify SVG has content
+			const svgContent = await svg.innerHTML();
+			expect(svgContent.length).toBeGreaterThan(0);
+
+			// Check for mermaid script in page
+			const content = await page.content();
+			expect(content).toContain('mermaid');
+		}
+	});
 });

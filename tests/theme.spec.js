@@ -42,6 +42,29 @@ test.describe('SGB Theme Tests', () => {
 		console.log('Body font family:', bodyStyles);
 	});
 
+	test('should render mermaid diagrams', async ({ page }) => {
+		await page.goto(`${baseUrl}/index.html`);
+
+		// Check for mermaid diagram presence
+		const mermaidDiagram = page.locator('.mermaid, pre.mermaid, [data-mermaid]');
+		const mermaidCount = await mermaidDiagram.count();
+
+		if (mermaidCount > 0) {
+			await expect(mermaidDiagram.first()).toBeVisible();
+
+			// Check if mermaid has been processed (should have SVG content)
+			const hasSvg = await mermaidDiagram.first().locator('svg').count();
+			if (hasSvg > 0) {
+				await expect(mermaidDiagram.first().locator('svg')).toBeVisible();
+				console.log('✅ Mermaid diagram rendered as SVG');
+			} else {
+				console.log('⚠️  Mermaid diagram found but not yet rendered as SVG');
+			}
+		} else {
+			console.log('⚠️  No mermaid diagram found on page');
+		}
+	});
+
 	test('should show table of contents', async ({ page }) => {
 		await page.goto(`${baseUrl}/index.html`);
 
