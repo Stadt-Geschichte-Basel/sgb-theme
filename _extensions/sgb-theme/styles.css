@@ -108,3 +108,19 @@
 .navbar-toggler-icon:focus {
 	--bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23ffe880' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
+
+/* Mermaid.js style overrides */
+
+:root {
+	--mermaid-bg-color: #fff;
+	--mermaid-edge-color: #3a1e3e;
+	--mermaid-node-fg-color: #3a1e3e;
+	--mermaid-fg-color: #fff;
+	--mermaid-fg-color--lighter: #fff;
+	--mermaid-fg-color--lightest: #fff;
+	--mermaid-font-family: 'Euclid Circular B';
+	--mermaid-label-bg-color: #fff;
+	--mermaid-label-fg-color: #3a1e3e;
+	--mermaid-node-bg-color: #fff;
+	--mermaid-node-fg-color: #3a1e3e;
+}

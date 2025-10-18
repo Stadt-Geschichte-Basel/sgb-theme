@@ -22,6 +22,21 @@ function testFunction() {
 }
 ```
 
+### Mermaid
+
+```{mermaid}
+%%| echo: false
+%%| fig-cap: "This flowchart tests the mermaid.js theme using the custom font Euclid Circular B and theme accent colours."
+
+flowchart LR
+  Node1([Node 1]) -.->|Edge A| Node3(Node 3)
+  Node2([Node 2]) -->|Edge B| Node3
+  Node3 -->|Edge C| Node4[(Node 4)]
+  Node4 -->|Edge D| Node5((Node 5))
+
+  style Node3 fill:#ffe880
+```
+
 ### Lists
 - Test bullet point 1
 - Test bullet point 2
