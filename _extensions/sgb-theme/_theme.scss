@@ -20,12 +20,20 @@ $navbar-dark-hover-color: $yellow;
 	color: $yellow;
 }
 
-.aa-SubmitIcon:hover {
-	fill: $yellow;
+.aa-SubmitIcon {
+	fill: $white;
+
+	&:hover {
+		fill: $yellow;
+	}
 }
 
-.navbar .quarto-navbar-tools .quarto-navigation-tool:hover {
-	color: $yellow;
+.aa-DetachedContainer .aa-SubmitIcon {
+	fill: $purple;
+
+	&:hover {
+		fill: $purple;
+	}
 }
 
 .navbar li.nav-item a.nav-link:hover {
