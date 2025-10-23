@@ -1,0 +1,28 @@
+/*-- scss:defaults --*/
+// Base document colors
+$body-bg: #181818;
+$body-color: #ccc;
+$link-color: #ffe880;
+
+$code-block-bg-alpha: -0.9;
+
+.bi-envelope,
+.anchorjs-link {
+	color: #ffe880 !important;
+}
+
+/* Mermaid.js style overrides */
+
+:root {
+	--mermaid-bg-color: $body-bg;
+	--mermaid-edge-color: $link-color;
+	--mermaid-node-fg-color: $link-color;
+	--mermaid-fg-color: $body-bg;
+	--mermaid-fg-color--lighter: $body-bg;
+	--mermaid-fg-color--lightest: $body-bg;
+	--mermaid-font-family: 'Euclid Circular B';
+	--mermaid-label-bg-color: $body-bg;
+	--mermaid-label-fg-color: $link-color;
+	--mermaid-node-bg-color: $body-bg;
+	--mermaid-node-fg-color: $link-color;
+}

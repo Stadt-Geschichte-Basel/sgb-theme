@@ -1,6 +1,8 @@
 ---
 title: "Testing SGB Theme"
-author: "SGB Theme Test"
+author:
+  name: "SGB Theme Test"
+  email: test@test.ch
 date: today
 ---
 

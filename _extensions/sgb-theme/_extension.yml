@@ -8,8 +8,8 @@ contributes:
     html:
       # Theme and appearance
       theme:
-        - cosmo
-        - _theme.scss
+        light: [cosmo, _theme.scss]
+        dark: [cosmo, _theme-dark.scss]
       css: styles.css
       mainfont: Euclid Circular B
       # Features
