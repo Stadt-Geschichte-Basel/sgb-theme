@@ -70,6 +70,23 @@ format:
   sgb-theme-html: default
 ```
 
+> [!WARNING]
+> **GitHub Actions Workflow Configuration**
+>
+> If your project uses GitHub Actions for publishing (e.g., `.github/workflows/quarto-publish.yml`), you must ensure the output format in the workflow matches the format specified in your `_quarto.yml`.
+>
+> For example, if you use `sgb-theme-html` as shown above, your workflow's render step should specify:
+>
+> ```yaml
+> - name: Render Quarto Project
+>   uses: quarto-dev/quarto-actions/render@v2
+>   with:
+>     to: sgb-theme-html # Must match the format in _quarto.yml
+>     path: test
+> ```
+>
+> Mismatched formats will cause the build to use the wrong theme or fail entirely.
+
 ### Assets
 
 The theme includes all required assets which are automatically copied to your site output:
