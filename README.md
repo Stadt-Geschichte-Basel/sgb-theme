@@ -159,16 +159,14 @@ The theme includes three font weights:
 
 ### Analytics Configuration
 
-The theme includes [Plausible Analytics](https://plausible.io/) configured for the Stadt.Geschichte.Basel domain by default. You can customize or disable this in your project's `_quarto.yml`:
-
-#### Use your appropriate Plausible domain
+The theme does not include analytics by default. If your project needs analytics, add your preferred script in your project's `_quarto.yml`:
 
 ```yaml
 format:
   sgb-theme-html:
     include-in-header:
       text: |
-        <script defer data-domain="dokumentation.stadtgeschichtebasel.ch" src="https://plausible.io/js/script.outbound-links.js"></script>
+        <script defer data-domain="dokumentation.stadtgeschichtebasel.ch" src="https://analytics.example.com/js/script.js"></script>
 ```
 
 ## Support

@@ -21,6 +21,10 @@ function assertContains(content, text, description) {
 	assert(content.includes(text), `${description} - should contain '${text}'`);
 }
 
+function assertNotContains(content, text, description) {
+	assert(!content.includes(text), `${description} - should not contain '${text}'`);
+}
+
 // Main test function
 function runTests() {
 	console.log('🧪 Running SGB Theme Tests\n');
@@ -58,17 +62,16 @@ function runTests() {
 		console.log('  ⚠️  Custom font found in content but may not be applied in CSS');
 	}
 
-	if (indexContent.includes('data-domain="stadtgeschichtebasel.ch"')) {
-		console.log('  ✅ Analytics script properly configured');
-	} else {
-		console.log('  ⚠️  Analytics script not found - extension features may not be applied');
-	}
-
-	if (indexContent.includes('plausible.io/js/script.outbound-links.js')) {
-		console.log('  ✅ Analytics script included');
-	} else {
-		console.log('  ⚠️  Analytics script not included - may be due to Quarto version compatibility');
-	}
+	assertNotContains(
+		indexContent,
+		'data-domain="stadtgeschichtebasel.ch"',
+		'Default analytics domain'
+	);
+	assertNotContains(
+		indexContent,
+		'plausible.io/js/script.outbound-links.js',
+		'Plausible analytics script'
+	);
 
 	// Test navigation and external links
 	if (indexContent.includes('target="_blank"')) {
@@ -105,11 +108,7 @@ function runTests() {
 		console.log('  ℹ️  Custom font referenced on about page');
 	}
 
-	if (aboutContent.includes('plausible.io')) {
-		console.log('  ✅ Analytics present on about page');
-	} else {
-		console.log('  ⚠️  Analytics may not be applied on about page');
-	}
+	assertNotContains(aboutContent, 'plausible.io', 'Plausible analytics on about page');
 
 	console.log('\n🎉 All tests passed! SGB Theme is working correctly.');
 }
