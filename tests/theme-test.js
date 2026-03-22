@@ -58,18 +58,6 @@ function runTests() {
 		console.log('  ⚠️  Custom font found in content but may not be applied in CSS');
 	}
 
-	if (indexContent.includes('data-domain="stadtgeschichtebasel.ch"')) {
-		console.log('  ✅ Analytics script properly configured');
-	} else {
-		console.log('  ⚠️  Analytics script not found - extension features may not be applied');
-	}
-
-	if (indexContent.includes('plausible.io/js/script.outbound-links.js')) {
-		console.log('  ✅ Analytics script included');
-	} else {
-		console.log('  ⚠️  Analytics script not included - may be due to Quarto version compatibility');
-	}
-
 	// Test navigation and external links
 	if (indexContent.includes('target="_blank"')) {
 		console.log('  ✅ External links configured to open in new window');
@@ -103,12 +91,6 @@ function runTests() {
 	// Test theme consistency on about page
 	if (aboutContent.includes('Euclid Circular B')) {
 		console.log('  ℹ️  Custom font referenced on about page');
-	}
-
-	if (aboutContent.includes('plausible.io')) {
-		console.log('  ✅ Analytics present on about page');
-	} else {
-		console.log('  ⚠️  Analytics may not be applied on about page');
 	}
 
 	console.log('\n🎉 All tests passed! SGB Theme is working correctly.');

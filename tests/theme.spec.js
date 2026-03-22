@@ -81,14 +81,6 @@ test.describe('SGB Theme Tests', () => {
 		// This depends on theme implementation
 	});
 
-	test('should include analytics script', async ({ page }) => {
-		await page.goto(`${baseUrl}/index.html`);
-
-		// Check for Plausible analytics script
-		const plausibleScript = page.locator('script[data-domain="stadtgeschichtebasel.ch"]');
-		await expect(plausibleScript).toBeDefined();
-	});
-
 	test('should handle external links correctly', async ({ page }) => {
 		await page.goto(`${baseUrl}/index.html`);
 

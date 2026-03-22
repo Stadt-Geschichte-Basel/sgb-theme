@@ -21,18 +21,6 @@ contributes:
       title-block-categories: false
       canonical-url: true
 
-      # Analytics - To customize for your site:
-      # 1. Override this in your _quarto.yml by setting:
-      #    format:
-      #      sgb-theme-html:
-      #        include-in-header:
-      #          text: |
-      #            <script defer data-domain="your-domain.com" src="https://plausible.io/js/script.outbound-links.js"></script>
-      # 2. Or remove analytics by setting include-in-header: null
-      include-in-header:
-        text: |
-          <script defer data-domain="stadtgeschichtebasel.ch" src="https://plausible.io/js/script.outbound-links.js"></script>
-
       # Resources
       resources:
         - assets/fonts/EuclidCircularB-Medium-WebS.woff2

@@ -26,7 +26,6 @@ test.describe('SGB Theme Browser Tests', () => {
 
 		// Test theme-specific elements
 		expect(content).toContain('Euclid Circular B'); // Custom font
-		expect(content).toContain('data-domain="stadtgeschichtebasel.ch"'); // Analytics
 
 		// External links get target="_blank" added by JavaScript, so check the DOM
 		const externalLinks = page.locator('#quarto-content a[href^="http"]:not([href*="localhost"])');
@@ -63,10 +62,6 @@ test.describe('SGB Theme Browser Tests', () => {
 			return window.getComputedStyle(el).backgroundColor;
 		});
 		expect(backgroundColor).toBeTruthy();
-
-		// Check for analytics script in page content
-		const content = await page.content();
-		expect(content).toContain('plausible.io/js/script.outbound-links.js');
 
 		// Check for bootstrap/theme assets by looking at CSS links
 		const cssLinks = await page.locator('link[rel="stylesheet"]').count();
