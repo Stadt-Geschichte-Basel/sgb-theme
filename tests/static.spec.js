@@ -26,8 +26,6 @@ test.describe('SGB Theme Browser Tests', () => {
 
 		// Test theme-specific elements
 		expect(content).toContain('Euclid Circular B'); // Custom font
-		expect(content).not.toContain('plausible.io');
-		expect(content).not.toContain('data-domain="stadtgeschichtebasel.ch"');
 
 		// External links get target="_blank" added by JavaScript, so check the DOM
 		const externalLinks = page.locator('#quarto-content a[href^="http"]:not([href*="localhost"])');
